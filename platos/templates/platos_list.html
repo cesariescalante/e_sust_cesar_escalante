@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+        <p>LISTA DE PLATOS</p>-->
+<!--    <p><strong>nombre : </strong>{{data.nombre}}<p>-->
+<!--    {% if data.precio > 40%}-->
+<!--        <p><strong> precio : </strong>{{data.precio}}<p>-->
+<!--    {% endif %}-->
+
+
+    <ul>
+        {% for plat in data %}
+            <li>
+                {% if plat.precio > 30%}
+                    {% if plat.pais == 'Peru' %}
+                        <p><strong>nombre : </strong>{{plat.nombre}}
+                        <p><strong> precio : </strong>{{plat.precio}}
+                        <p><strong> pais : </strong>{{plat.pais}}
+                    {% endif %}
+                {% endif%}
+
+
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

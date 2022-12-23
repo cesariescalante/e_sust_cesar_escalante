@@ -1,0 +1,29 @@
+{% extends "meseros/base_generic.html" %}
+
+{% block content %}
+    <div>
+        <form action="." method="GET">
+            <label> Busqueda:</label>
+            <input type="text" name="q" value="{{ query | escape  }}" >
+
+        </form>
+    {% if query %}
+        <h2>Resultados para "{{ query|escape }}"</h2>
+        {% if data %}
+            <ul>
+                {% for mesero in data %}
+                    <li>{{mesero.nombre}} es de {{mesero.pais}} que tiene {{mesero.edad}} años</li>
+
+                {% endfor%}
+
+            </ul>
+        {% else %}
+            <p>no se han encontrado meseros con "{{ query | escape  }}"</p>
+
+        {% endif %}
+
+
+    {% endif %}
+
+    </div>
+{% endblock %}

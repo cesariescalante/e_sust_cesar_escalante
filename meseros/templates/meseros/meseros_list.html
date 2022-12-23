@@ -1,0 +1,25 @@
+{% extends "meseros/base_generic.html" %}
+
+{% block content %}
+
+    <title>LISTA DE MESEROS</title>
+    <p>LISTA DE MESEROS</p>
+<!--    <p><strong>nombre : </strong>{{data.nombre}}<p>-->
+<!--    <p><strong> edad : </strong>{{data.edad}}<p>-->
+<!--    <p><strong>pais: </strong>{{data.pais}}<p>-->
+    <ul>
+
+        {% for mesa in data %}
+            <li>
+
+                <p><strong>nombre : </strong>{{mesa.nombre}}
+                <p><strong> edad : </strong>{{mesa.edad}}
+                <p><strong> pais : </strong>{{mesa.pais}}
+
+
+
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <title>PLATOS</title>
+    <p>LISTA DE PLATOS</p>
+   <ul>
+
+        {% for mesa in data %}
+            <li>
+
+                <p><strong>nombre : </strong>{{mesa.nombre}}
+                <p><strong>precio : </strong>{{mesa.precio}}
+                <p><strong>pais : </strong>{{mesa.pais}}
+
+
+
+            </li>
+        {% endfor %}
+
+    </ul>
+{% endblock %}
